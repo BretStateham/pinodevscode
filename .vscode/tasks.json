@@ -1,0 +1,13 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "taskName": "Start Remote Debugger",
+      "type": "shell",
+      "command": "ssh -t pi@192.168.2.27 \"sudo node --inspect-brk=192.168.2.27:9229 /home/pi/pinodepigpio/app.js\"",
+      "problemMatcher":[]
+    }
+  ]
+}
