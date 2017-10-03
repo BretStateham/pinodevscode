@@ -2,9 +2,6 @@
 //This is a Node.js wrapper around the native pigpio C library https://github.com/joan2937/pigpio
 let Gpio = require('pigpio').Gpio;
 
-//Track the previous level to test switch bouncing...
-let debouncing = false;
-
 //Initialize the LED pin for output (GPIO5, GPIO Header Pin 29) 
 let led = new Gpio(5,{mode: Gpio.OUTPUT});
 
@@ -19,6 +16,13 @@ let button = new Gpio(6,{
   pullUpDown: Gpio.PUD_DOWN,
   edge: Gpio.EITHER_EDGE
 });
+
+//Setup a flag to indicate if the button is currently being debounced.
+let debouncing = false;
+
+//We'll stop the app after a certain number of button presses.
+let presses = 0;
+let maxpresses = 10;
 
 //When the button interrupt is triggered
 //(that could be either when it is turned on or off)
@@ -39,15 +43,22 @@ button.on('interrupt',function(level){
       //And set the LED to match the level
       led.digitalWrite(level);
 
-      //Report the level to the console
-      //console.log(`${level}`);
+      //If the level is 0, the button was 
+      //just released, completing a button press
+      if(level==0){
+        presses++
+
+        //Report the level to the console
+        console.log(`${level} - ${presses} of ${maxpresses}`);
+
+        if(presses >= maxpresses){
+          process.exit(0);
+        }
+      }
     }
 
     //Turn off the debouncing flag
     debouncing = false;
   },25);
 
-})
-
-
-
+});

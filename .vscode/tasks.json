@@ -6,7 +6,7 @@
     {
       "taskName": "Start Remote Debugger",
       "type": "shell",
-      "command": "ssh -t pi@your.pi.ip.address \"sudo node --inspect-brk=your.pi.ip.address:9229 /home/pi/pinodepigpio/app.js\"",
+      "command": "ssh -t pi@your.pi.ip.address \"sudo node --inspect-brk=your.pi.ip.address:9229 /home/pi/pinodevscode/app.js\"",
       "problemMatcher":[]
     }
   ]
