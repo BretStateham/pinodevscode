@@ -15,5 +15,5 @@ Steps:
     - npm init (accept defaults)
   - Configure git
     - `git config core.fileMode false` on both pi and windows side
-    - `git config core.autocrlf false` on windows
+    - `git config core.autocrlf false` on windows ?
  
