@@ -5,7 +5,7 @@
         "type": "node",
         "request": "attach",
         "name": "Attach to Remote",
-        "address": "192.168.2.27",
+        "address": "your.pis.ip.address",
         "port": 9229,
         "localRoot": "${workspaceRoot}",
         "remoteRoot": "/home/pi/pinodepigpio"
