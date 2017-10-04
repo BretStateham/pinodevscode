@@ -55,10 +55,13 @@ This walkthrough will show you how you can easily debug Node.js applications on 
 
 1. Setup your ssh key to login easily to the pi without having to include a password: https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md
 
-   - Open bash on Windows
-   - ssh-keygen -t rsa -C "SSH Key for logging into the pi"
-      - Accept the default name for the key `(~/.ssh/id_rsa)`
+   - Open bash on Windows, and run the following accepting all the defaults (including the empty passkey)
+
+        ```bash
+        ssh-keygen -t rsa -C "SSH Key for logging into the pi"
+        ```
    - ssh into the pi with the password, and create the .ssh folder for the pi profile:
+
       ```bash
       #RUN THESE COMMANDS ON THE PI
       cd ~
