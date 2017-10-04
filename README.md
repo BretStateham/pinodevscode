@@ -6,6 +6,9 @@ Debugging Node.js on the Raspberry Pi with Visual Studio Code
 
 This walkthrough will show you how you can easily debug Node.js applications on the Raspberry Pi using Visual Studio Code on Windows (and when I get around to documenting it, for the Mac as well).
 
+You can grab the slides and video from:
+[https://aka.ms/pinodevscodepres](https://aka.ms/pinodevscodepres)
+
 ## Steps
 
 1. Flash Raspbian to your SD Card
